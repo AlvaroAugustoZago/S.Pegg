@@ -1,10 +1,15 @@
 package br.com.spegg.models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class UBSFuncionamento {
-
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
     private String codCnes;
     private String lat;
     private String longi;
@@ -122,8 +127,16 @@ public class UBSFuncionamento {
     public void setMes_ubs_det(String mes_ubs_det) {
         this.mes_ubs_det = mes_ubs_det;
     }
+    
+    public int getId() {
+		return id;
+	}
 
-    public String getNomeArquivo() {
-        return "arquivos/ubs_funcionamentonone.csv.csv";
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getNomeArquivo() {
+        return "ubs_funcionamentonone";
     }
 }

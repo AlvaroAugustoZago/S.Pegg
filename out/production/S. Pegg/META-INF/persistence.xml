@@ -6,10 +6,17 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 	<persistence-unit name="SENAI" transaction-type="RESOURCE_LOCAL">
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dados" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/banco" />
 			<property name="javax.persistence.jdbc.user" value="root" />
-			<property name="javax.persistence.jdbc.password" value="27062016" />
-			<property name="eclipselink.ddl-generation" value="create-tables" />
+			<property name="javax.persistence.jdbc.password" value="1234" />
+			
+			
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL57Dialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			
+<!-- 			<property name="eclipselink.ddl-generation" value="create-tables" /> -->
 		</properties>
 	</persistence-unit>
 </persistence>
