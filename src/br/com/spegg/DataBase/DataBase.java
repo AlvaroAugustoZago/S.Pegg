@@ -1,6 +1,7 @@
 package br.com.spegg.DataBase;
 
 import br.com.spegg.models.UBSConstrucao;
+import br.com.spegg.models.UBSEquipes;
 import br.com.spegg.models.UBSExistentes;
 import br.com.spegg.models.UBSFuncionamento;
 
@@ -59,6 +60,12 @@ public class DataBase<T> {
                             ((UBSFuncionamento) obj).setAno_ubs_det(data[12]);
                             ((UBSFuncionamento) obj).setMes_ubs_det(data[13]);
                             objs.add(obj);
+                        }else if (obj instanceof UBSEquipes && arquivoCSV.contains(((UBSEquipes) obj).getNomeArquivo())) {
+                        	 ((UBSEquipes) obj).setEquipes(data[0]);
+                        	 ((UBSEquipes) obj).setNo_cidade(data[1]);
+                        	 ((UBSEquipes) obj).setLat(data[2]);
+                        	 ((UBSEquipes) obj).setLongi(data[3]);
+                        	 objs.add(obj);
                         }
                     }
 
