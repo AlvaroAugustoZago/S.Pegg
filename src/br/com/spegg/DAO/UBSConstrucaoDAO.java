@@ -10,6 +10,7 @@ public class UBSConstrucaoDAO extends JPAConnection {
     public void incluir(List<UBSConstrucao> construcao) {
         for (UBSConstrucao constr: construcao) {
             synchronized (constr) {
+                System.out.println("persistindo obj:" + constr.getNo_cidade());
                 super.incluir(constr);
             }
 

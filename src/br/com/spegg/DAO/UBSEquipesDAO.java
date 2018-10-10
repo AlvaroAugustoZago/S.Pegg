@@ -10,6 +10,7 @@ public class UBSEquipesDAO extends JPAConnection {
 	 public void incluir(List<UBSEquipes> equipes) {
 	        for (UBSEquipes equip: equipes) {
 	            synchronized (equip) {
+					System.out.println("persistindo obj:" + equip.getNo_cidade());
 	                super.incluir(equip);
 	            }
 
