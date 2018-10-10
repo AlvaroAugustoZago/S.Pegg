@@ -10,7 +10,7 @@ public class UBSExistentesDAO extends JPAConnection {
     public void incluir(List<UBSExistentes> existentes) {
         for (UBSExistentes constr: existentes) {
             synchronized (constr) {
-                System.out.println("persistindo obj:" + constr.getNo_cidade());
+                System.out.println("persistindo obj:" + constr.getNo_cidade() + " do " + constr.getNomeArquivo());
                 super.incluir(constr);
             }
 
