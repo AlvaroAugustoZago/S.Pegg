@@ -1,19 +1,27 @@
 package br.com.spegg.models;
 
+import br.com.spegg.Construtor.Arquivo;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.lang.reflect.Field;
+import java.util.*;
 
 @Entity
-public class UBSConstrucao {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+public class UBSConstrucao extends Arquivo<UBSConstrucao> {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String no_cidade;
     private String nomeCidade;
     private String valor;
     private String taxa;
+
+    public UBSConstrucao() throws Exception {
+        super();
+    }
 
     public String getNo_cidade() {
         return no_cidade;
@@ -46,16 +54,16 @@ public class UBSConstrucao {
     public void setTaxa(String taxa) {
         this.taxa = taxa;
     }
-    
+
     public int getId() {
-		return id;
-	}
+        return id;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public String getNomeArquivo() {
+    public String getNomeArquivo() {
         return "ubs_construcaonone";
     }
 }

@@ -1,12 +1,17 @@
 package br.com.spegg.models;
 
+import br.com.spegg.Construtor.Arquivo;
+import br.com.spegg.Construtor.Construtor;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 @Entity
-public class UBSFuncionamento {
+public class UBSFuncionamento extends Arquivo<UBSFuncionamento>{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
@@ -23,6 +28,9 @@ public class UBSFuncionamento {
     private String cidade;
     private String ano_ubs_det;
     private String mes_ubs_det;
+
+    public UBSFuncionamento() throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+    }
 
     public String getCodCnes() {
         return codCnes;

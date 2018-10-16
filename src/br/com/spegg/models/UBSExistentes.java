@@ -1,12 +1,16 @@
 package br.com.spegg.models;
 
+import br.com.spegg.Construtor.Arquivo;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 @Entity
-public class UBSExistentes {
+public class UBSExistentes extends Arquivo<UBSExistentes> {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
@@ -14,6 +18,9 @@ public class UBSExistentes {
     private String nomeCidade;
     private String valor;
     private String taxa;
+
+    public UBSExistentes() throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+    }
 
     public String getNo_cidade() {
         return no_cidade;
